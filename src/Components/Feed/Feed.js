@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from 'axios'
-import APIKEY from './../../config';
-import Loader from '../Loader/Loader';
-import Message from './../Message/Message';
-import Post from '../Post/Post';
+import APIKEY from './../../config'
+import Loader from '../Loader/Loader'
+import Message from './../Message/Message'
+import Post from '../Post/Post'
 import './Feed.css'
 
 export default class Feed extends React.Component {
