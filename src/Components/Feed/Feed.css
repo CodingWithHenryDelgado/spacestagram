@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+
+#company {
+    background-color: #FFF;
+    border-bottom: 1px solid #DBDBDB;
+    text-align: left;
+    padding-left: 5vw;
+}
+
+#company h1 {
+    font-family: 'Ms Madi', cursive;
+    margin-bottom: 0;
+}
+
+.feed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.post {
+    background-color: #FFF;
+    border: 2px solid #DBDBDB;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3vh 0;
+    width: 50%;
+}
+
+.post-author {
+    text-align: left;
+    width: 90%;
+}
+
+.picture {
+    height: 40vh;
+    width: 100%;
+}
+
+.post-title {
+    margin: 0;
+    text-align: left;
+    width: 90%;
+}
+
+.post-desc {
+    width: 90%;
+}

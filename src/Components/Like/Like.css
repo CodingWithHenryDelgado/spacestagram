@@ -1,0 +1,13 @@
+#like {
+    background-color: transparent;
+    border: none;
+    font-size: 3vh;
+    margin: 2vh 0;
+    outline: none;
+    text-align: left;
+    width: 90%;
+}
+
+.fas {
+    color: red;
+}
