@@ -8,6 +8,11 @@
     width: 90%;
 }
 
+.far {
+    width: 100px;
+}
+
 .fas {
+    animation-iteration-count: 1;
     color: red;
 }

@@ -1,27 +1,34 @@
 import React from 'react'
 import axios from 'axios'
-import APIKEY from './../../API';
+import APIKEY from './../../config';
+import Loader from '../Loader/Loader';
+import Message from './../Message/Message';
+import Post from '../Post/Post';
 import './Feed.css'
-import Like from '../Like/Like';
 
 export default class Feed extends React.Component {
     state = {
-        pictureInfo: {}
+        pictureInfo: [],
+        loading: true
     }
 
     componentDidMount() {
         axios(`https://api.nasa.gov/planetary/apod?api_key=${APIKEY}`)
         .then(res => {
             const pictureInfo = res.data
-            console.log(pictureInfo)
-            this.setState({pictureInfo})
+            const newState = {...this.state}
+            newState.pictureInfo = pictureInfo
+            newState.loading = false
+            this.setState(newState)
         })
         .catch((err) => {
-            console.error(err)
+            <Message>{err}</Message>
         })
     }
 
     render() {
+        const info = this.state.pictureInfo
+
         return (
             <>
                 <div id='company'>
@@ -29,15 +36,20 @@ export default class Feed extends React.Component {
                     <p>Brought to you by NASA's Astronomy Photo of the Day (APOD) API</p>
                 </div>
                 <div className='feed'>
-                    <div className='post'>
-                        <div className='post-author'>
-                            <p><strong>{this.state.pictureInfo.copyright}</strong></p>
-                        </div>
-                        <img className='picture' src={this.state.pictureInfo.hdurl} alt={this.state.pictureInfo.title}/>
-                        <Like />
-                        <h2 className='post-title'>{this.state.pictureInfo.title} - {this.state.pictureInfo.date}</h2>
-                        <p className='post-desc'>{this.state.pictureInfo.explanation}</p>
-                    </div>
+                    {
+                        this.state.loading ? 
+
+                        <Loader /> :
+
+                        <Post 
+                            copyright = {info.copyright}
+                            date = {info.date}
+                            explanation = {info.explanation}
+                            hdurl = {info.hdurl}
+                            id = {info.date}
+                            title = {info.title}
+                        />
+                    }
                 </div>
             </>
         )

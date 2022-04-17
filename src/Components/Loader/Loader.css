@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@1,700&display=swap');
+
+.loading-page {
+    color: #000;
+    display: flex;
+    font-family: 'Space Mono', monospace;
+    font-size: 5vh;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url('https://wallpaperaccess.com/full/1745055.jpg'); */
+    height: 100vh;
+    text-align: center;
+    width: 100vw;
+}
