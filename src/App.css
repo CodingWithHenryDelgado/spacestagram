@@ -3,6 +3,7 @@
 .App {
   background-color: #FAFAFA;
   font-family: 'Anek Telugu', sans-serif;
+  height: 100vh;
   margin: auto;
 }
 

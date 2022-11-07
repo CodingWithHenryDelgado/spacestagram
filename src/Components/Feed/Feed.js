@@ -14,16 +14,16 @@ export default class Feed extends React.Component {
 
     componentDidMount() {
         axios(`https://api.nasa.gov/planetary/apod?api_key=${APIKEY}`)
-        .then(res => {
-            const pictureInfo = res.data
-            const newState = {...this.state}
-            newState.pictureInfo = pictureInfo
-            newState.loading = false
-            this.setState(newState)
-        })
-        .catch((err) => {
-            <Message>{err}</Message>
-        })
+            .then(res => {
+                const pictureInfo = res.data
+                const newState = { ...this.state }
+                newState.pictureInfo = pictureInfo
+                newState.loading = false
+                this.setState(newState)
+            })
+            .catch((err) => {
+                <Message>{err}</Message>
+            })
     }
 
     render() {
@@ -37,18 +37,18 @@ export default class Feed extends React.Component {
                 </div>
                 <div className='feed'>
                     {
-                        this.state.loading ? 
+                        this.state.loading ?
 
-                        <Loader /> :
+                            <Loader /> :
 
-                        <Post 
-                            copyright = {info.copyright}
-                            date = {info.date}
-                            explanation = {info.explanation}
-                            hdurl = {info.hdurl}
-                            id = {info.date}
-                            title = {info.title}
-                        />
+                            <Post
+                                copyright={info.copyright}
+                                date={info.date}
+                                explanation={info.explanation}
+                                hdurl={info.url}
+                                id={info.date}
+                                title={info.title}
+                            />
                     }
                 </div>
             </>

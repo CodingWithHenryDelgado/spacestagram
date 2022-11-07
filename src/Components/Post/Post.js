@@ -8,17 +8,17 @@ const Post = (props) => {
             <div className='post-author'>
                 <p><strong>{props.copyright ? props.copyright : 'NASA'}</strong></p>
             </div>
-            <img className='picture' src={props.hdurl} alt={props.title}/>
+            <object className='picture' data={props.hdurl} aria-labelledby="This is an image or video from the NASA a picture a day API" type="image/png" />
             <div className='post-row'>
                 <Like />
-                <button 
-                    id="share" 
+                <button
+                    id="share"
                     onClick={() => {
                         navigator.clipboard.writeText(props.hdurl)
                         alert("Link copied to clipboard")
                     }}
                 >
-                    <i className='fa-solid fa-share'/>
+                    <i className='fa-solid fa-share' />
                 </button>
             </div>
             <h2 className='post-title'>{props.title} - {props.date}</h2>
